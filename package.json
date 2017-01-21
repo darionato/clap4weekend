@@ -1,0 +1,28 @@
+{
+  "name": "clap4weekend",
+  "version": "1.0.0",
+  "description": "Node.js web application to display a countdown with the minute missing to the weekend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darionato/clap4weekend.git"
+  },
+  "keywords": [
+    "weekend",
+    "node",
+    "js",
+    "clap"
+  ],
+  "author": "Dario Malfatti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darionato/clap4weekend/issues"
+  },
+  "homepage": "https://github.com/darionato/clap4weekend#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
