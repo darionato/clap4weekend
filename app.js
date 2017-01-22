@@ -2,7 +2,15 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+
+
+  let c = require('./countdown/countdown.js');
+
+  let r = new c.Countdown();
+
+  res.send(`Hello World! ${r.getCountdown()}`);
+
+
 });
 
 var port = process.env.PORT || 5000;
