@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/darionato/clap4weekend#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "moment": "^2.17.1"
   }
 }
