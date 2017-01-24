@@ -4,7 +4,10 @@ class Countdown {
 
     getCountdown () {
         
-        return 1000;
+        let moment = require('moment');
+        var friday = moment().day(5).hour(17).minute(30);
+        var missing = friday.diff(moment(), 'minutes');
+        return missing;
 
     }
 
