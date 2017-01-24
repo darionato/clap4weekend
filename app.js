@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
 
   let r = new c.Countdown();
 
-  res.send(`Hello World! ${r.getCountdown()}`);
+  res.send(`Minute missing to clap your hands for weekend: ${r.getCountdown()}`);
 
 
 });
