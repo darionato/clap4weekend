@@ -19,8 +19,9 @@ app.get('/', function (req, res) {
 
   // return the missing minutes
   res.render('index', { 
-    content: `Minute missing to clap your hands for weekend: ${r.getCountdown()}`,
-    title: 'Clup 4 weekend'
+    counter: r.getCountdown(),
+    info: 'minute missing to clap your hands for weekend',
+    title: 'Clap 4 weekend'
   });
 
 
