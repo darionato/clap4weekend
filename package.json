@@ -24,6 +24,7 @@
   "homepage": "https://github.com/darionato/clap4weekend#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "moment": "^2.17.1"
+    "moment": "^2.17.1",
+    "pug": "^2.0.0-beta9"
   }
 }
