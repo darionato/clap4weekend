@@ -7,6 +7,10 @@ var app = express();
 app.set('view engine', 'pug');
 
 
+// set the static folder
+app.use(express.static('public'));
+
+
 // bind the main url
 app.get('/', function (req, res) {
 
@@ -20,7 +24,7 @@ app.get('/', function (req, res) {
   // return the missing minutes
   res.render('index', { 
     counter: r.getCountdown(),
-    info: 'minute missing to clap your hands for weekend',
+    info: 'minutes missing to clap your hands to welcome the weekend :-)',
     title: 'Clap 4 weekend'
   });
 
