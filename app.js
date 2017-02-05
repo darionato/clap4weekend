@@ -14,16 +14,8 @@ app.use(express.static('public'));
 // bind the main url
 app.get('/', function (req, res) {
 
-
-  // require the countdown library
-  let c = require('./countdown/countdown.js');
-
-  // create a new instance
-  let r = new c.Countdown();
-
   // return the missing minutes
   res.render('index', { 
-    counter: r.getCountdown(),
     info: 'minutes missing to clap your hands to welcome the weekend :-)',
     title: 'Clap 4 weekend'
   });
