@@ -7,7 +7,7 @@ define(function() {
 
         getCountdown () {
             
-            var friday = moment().day(5).hour(17).minute(30);
+            var friday = moment().day(5).hour(17).minute(30).second(0);
             var missing = friday.diff(moment(), 'minutes');
 
             if (missing < 0) friday = friday.add(1, 'week');
