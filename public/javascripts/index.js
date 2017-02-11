@@ -9,7 +9,7 @@ require(['countdown'], function(countdown) {
         document.getElementById('counter').innerText = c;
         document.title = `${c} - ${title}`;
 
-        setTimeout(startTimer, 5000);
+        setTimeout(startTimer, 500);
 
     }
 
