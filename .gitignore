@@ -38,3 +38,4 @@ jspm_packages
 
 # VS Code stuff
 .vscode
+package-lock.json

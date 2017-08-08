@@ -9,6 +9,7 @@ app.set('view engine', 'pug');
 
 // set the static folder
 app.use(express.static('public'));
+app.use(express.static('dist'));
 
 
 // bind the main url

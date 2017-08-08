@@ -1,18 +1,18 @@
-require(['countdown'], function(countdown) {
+import countdown from './countdown';
 
-    var title = document.title;
 
-    startTimer = function() {
+var title = document.title;
+var cd = new countdown();
 
-        var c = countdown.getCountdown()
+var startTimer = function() {
 
-        document.getElementById('counter').innerText = c;
-        document.title = `${c} - ${title}`;
+    var c = cd.getCountdown()
 
-        setTimeout(startTimer, 500);
+    document.getElementById('counter').innerText = c;
+    document.title = `${c} - ${title}`;
 
-    }
+    setTimeout(startTimer, 500);
 
-    startTimer();
+}
 
-});
+startTimer();

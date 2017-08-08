@@ -7,7 +7,8 @@
     "node": "8.1.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,8 @@
   "homepage": "https://github.com/darionato/clap4weekend#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "moment": "^2.17.1",
-    "pug": "^2.0.0-beta9"
+    "moment": "^2.18.1",
+    "pug": "^2.0.0-beta9",
+    "webpack": "^3.4.1"
   }
 }
