@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/darionato/clap4weekend#readme",
   "dependencies": {
+    "@types/react": "^16.0.5",
+    "@types/react-dom": "^15.5.4",
     "express": "^4.14.0",
     "moment": "^2.18.1",
     "pug": "^2.0.0-rc.4",
@@ -34,5 +36,9 @@
     "react-dom": "^15.6.1",
     "webpack": "^3.6.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.3",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.5.2"
+  }
 }
