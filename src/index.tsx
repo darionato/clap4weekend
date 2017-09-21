@@ -1,20 +1,16 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Countdown } from './core/countdown';
+import { Counter } from './components/counter';
 
 let title = document.title;
 
 let startTimer = function(){
+   
+    //let c = cd.getCountdown()
 
-    let cd = new Countdown();
+    //document.title = `${c} - ${title}`;
     
-    let c = cd.getCountdown()
-
-    document.title = `${c} - ${title}`;
-
-    const element = <h1 className="title">{c}</h1>;
-    
-    ReactDOM.render(element, document.getElementById('counter'));
+    ReactDOM.render(<Counter />, document.getElementById('counter'));
 
 }
 
