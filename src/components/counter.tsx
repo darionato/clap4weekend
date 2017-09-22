@@ -6,6 +6,8 @@ import { Countdown } from './../core/countdown';
 export class Counter extends React.Component<any, any> {
 
     timerId: number;
+    updateTitle: boolean;
+    title: string;
 
     constructor(props : any){
 
@@ -13,7 +15,11 @@ export class Counter extends React.Component<any, any> {
 
         let cd = new Countdown();
 
-        this.state = { minutes: cd.getCountdown() }
+        this.state = { minutes: cd.getCountdown() };
+
+        this.updateTitle = props.updateTitle === 'y';
+
+        if (this.updateTitle) this.title = document.title;
 
     }
 
@@ -37,9 +43,13 @@ export class Counter extends React.Component<any, any> {
 
         let cd = new Countdown();
 
+        let c = cd.getCountdown();
+
         this.setState({
-            minutes: cd.getCountdown()
+            minutes: c
         });
+
+        if (this.updateTitle) document.title = `${c} - ${this.title}`;
 
     }
 
