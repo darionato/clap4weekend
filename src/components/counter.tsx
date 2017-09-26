@@ -1,6 +1,6 @@
 import * as React from 'react';
+import * as Push from 'push.js';
 import { Countdown } from './../core/countdown';
-
 
 
 export class Counter extends React.Component<any, any> {
@@ -8,6 +8,7 @@ export class Counter extends React.Component<any, any> {
     timerId: number;
     updateTitle: boolean;
     title: string;
+    notified: boolean;
 
     constructor(props : any){
 
@@ -50,6 +51,13 @@ export class Counter extends React.Component<any, any> {
         });
 
         if (this.updateTitle) document.title = `${c} - ${this.title}`;
+
+        if (!this.notified && c < 6)
+        {
+            this.notified = true;
+            Push.create('Keep attention! Few minutes missing!');
+        }
+
 
     }
 
