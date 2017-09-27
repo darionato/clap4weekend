@@ -22,6 +22,8 @@ export class Counter extends React.Component<any, any> {
 
         if (this.updateTitle) this.title = document.title;
 
+        this.handleClick = this.handleClick.bind(this);
+
     }
 
     componentDidMount() {
@@ -38,6 +40,19 @@ export class Counter extends React.Component<any, any> {
         clearInterval(this.timerId);
 
     }
+
+
+
+    handleClick() {
+
+        let cd = new Countdown();
+        
+        let c = cd.getCountdown();
+
+        Push.create(`${c} minutes missing!`);
+
+    }
+
 
 
     tick() {
@@ -64,7 +79,7 @@ export class Counter extends React.Component<any, any> {
 
     render() {
 
-        return <h1 className="title">{this.state.minutes}</h1>
+        return <h1 onClick={this.handleClick} className="title">{this.state.minutes}</h1>
 
     }
 
