@@ -13,7 +13,12 @@ export class Countdown {
 
         missing = friday.diff(moment(), 'minutes');
 
-        return missing;
+        let result = {
+            minutes: missing,
+            seconds: friday.diff(moment(), 'seconds')
+        };
+
+        return result;
 
     }
 

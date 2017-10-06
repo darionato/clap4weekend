@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as Push from 'push.js';
 import { Countdown } from './../core/countdown';
+import { Seconds } from './seconds';
 
 
 export class Counter extends React.Component<any, any> {
@@ -16,7 +17,9 @@ export class Counter extends React.Component<any, any> {
 
         let cd = new Countdown();
 
-        this.state = { minutes: cd.getCountdown() };
+        let c = cd.getCountdown();
+
+        this.state = { minutes: c.minutes, seconds: c.seconds };
 
         this.updateTitle = props.updateTitle === 'y';
 
@@ -49,7 +52,7 @@ export class Counter extends React.Component<any, any> {
         
         let c = cd.getCountdown();
 
-        Push.create(`${c} minutes missing!`);
+        Push.create(`${c.minutes} minutes missing!`);
 
     }
 
@@ -62,15 +65,20 @@ export class Counter extends React.Component<any, any> {
         let c = cd.getCountdown();
 
         this.setState({
-            minutes: c
+            minutes: c.minutes,
+            seconds: c.seconds
         });
 
-        if (this.updateTitle) document.title = `${c} - ${this.title}`;
+        if (this.updateTitle) {
+            let time = `${c.minutes}`;
+            if (c.minutes === 0) time += `:${c.seconds}`;
+            document.title = `${time} - ${this.title}`;
+        }
 
-        if (!this.notified && c < 6)
+        if (!this.notified && c.minutes < 6)
         {
             this.notified = true;
-            Push.create('Keep attention! Few minutes missing!');
+            Push.create(`Keep attention! ${c.minutes} minutes missing!`);
         }
 
 
@@ -79,7 +87,10 @@ export class Counter extends React.Component<any, any> {
 
     render() {
 
-        return <h1 onClick={this.handleClick} className="title">{this.state.minutes}</h1>
+        return <h1 onClick={this.handleClick} className="title">
+            {this.state.minutes}
+            <Seconds minutes={this.state.minutes} seconds={this.state.seconds}></Seconds>
+            </h1>
 
     }
 
