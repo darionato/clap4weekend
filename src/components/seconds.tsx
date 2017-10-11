@@ -10,7 +10,7 @@ export class Seconds extends React.Component<any, any> {
 
     render(){
 
-        if (this.props.minutes > 0) return null;
+        if (this.props.minutes > 0 || this.props.seconds < 0) return null;
 
         return <span>:{this.props.seconds}</span>
 
