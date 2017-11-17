@@ -39,3 +39,8 @@ jspm_packages
 # VS Code stuff
 .vscode
 package-lock.json
+
+# website stuff
+dist/
+.hg/
+monitor/
