@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { MenuItem } from './menuitem';
+import { IMenuItem } from "../interfaces/IMenuItem";
 
 export class Footer extends React.Component<any, any> {
 
-    menus: string[];
+    menus: IMenuItem[];
 
     constructor(props : any){
 
@@ -18,7 +19,7 @@ export class Footer extends React.Component<any, any> {
         return (
             <ul>
                 {this.menus.map((m) =>
-                    <MenuItem key={m} menu={m} />
+                    <MenuItem key={m.key} menu={m} />
                 )}
             </ul>
         );
