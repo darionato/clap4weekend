@@ -38,7 +38,7 @@ module.exports = {
         new WebpackMonitor({
           capture: true, // -> default 'true'
           target: '../monitor/myStatsStore.json', // default -> '../monitor/stats.json'
-          launch: true, // -> default 'false'
+          launch: false, // -> default 'false'
           port: 3030, // default -> 8081
         }),
     ]
