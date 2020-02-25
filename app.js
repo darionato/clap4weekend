@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 
   // return the missing minutes
   res.render('index', { 
-    info: 'minutes missing to clap your f... hands to welcome the weekend :-)',
+    info: 'minutes missing to clap your hands to welcome the weekend :-)',
     title: 'Clap 4 weekend'
   });
 
